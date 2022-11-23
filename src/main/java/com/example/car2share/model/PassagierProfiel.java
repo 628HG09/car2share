@@ -20,9 +20,9 @@ public class PassagierProfiel {
     @OneToOne
     Voertuig voertuig;
 
-//    @OneToMany(mappedBy = "passagierProfiel")
-//    @JsonIgnore
-//    List<Ritverzoek>ritverzoeken;
+    @OneToMany(mappedBy = "passagierProfiel")
+    @JsonIgnore
+    List<Ritverzoek>ritverzoeken;
 
 
 //    Getters & setters
@@ -66,11 +66,11 @@ public class PassagierProfiel {
         this.voertuig = voertuig;
     }
 
-    //    public List<Ritverzoek> getRitverzoeken() {
-//        return ritverzoeken;
-//    }
+    public List<Ritverzoek> getRitverzoeken() {
+        return ritverzoeken;
+    }
 
-//    public void setRitverzoeken(List<Ritverzoek> ritverzoeken) {
-//        this.ritverzoeken = ritverzoeken;
-//    }
+    public void setRitverzoeken(List<Ritverzoek> ritverzoeken) {
+        this.ritverzoeken = ritverzoeken;
+    }
 }

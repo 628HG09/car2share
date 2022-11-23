@@ -11,10 +11,10 @@ public class Ritverzoek {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String vertrekLocatie;
-    private String bestemming;
-    private LocalDate reisDatum;
-    private int aantalPersonen;
+    public String vertrekLocatie;
+    public String bestemming;
+    public LocalDate reisDatum;
+    public int aantalPersonen;
 
     @ManyToOne
             //evt. joinColumn:
@@ -68,4 +68,5 @@ public class Ritverzoek {
     public void setPassagierProfiel(PassagierProfiel passagierProfiel) {
         this.passagierProfiel = passagierProfiel;
     }
+
 }

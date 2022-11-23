@@ -4,12 +4,23 @@ import java.time.LocalDate;
 
 public class RitverzoekDto {
 
-    private Long id;
+    public Long id;
 
-    private String vertrekLocatie;
-    private String bestemming;
-    private LocalDate reisDatum;
-    private int aantalPersonen;
+    public String vertrekLocatie;
+    public String bestemming;
+    public LocalDate reisDatum;
+    public int aantalPersonen;
+
+    public RitverzoekDto(){
+    }
+
+    public RitverzoekDto(Long id, String vertrekLocatie, String bestemming, LocalDate reisDatum, int aantalPersonen) {
+        this.id = id;
+        this.vertrekLocatie = vertrekLocatie;
+        this.bestemming = bestemming;
+        this.reisDatum = reisDatum;
+        this.aantalPersonen = aantalPersonen;
+    }
 
     public Long getId() {
         return id;

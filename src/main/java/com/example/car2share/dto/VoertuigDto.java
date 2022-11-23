@@ -2,11 +2,14 @@ package com.example.car2share.dto;
 
 public class VoertuigDto {
 
-    private Long id;
-    private String merk;
-    private String model;
-    private String kenteken;
-    private String kleur;
+    public Long id;
+    public String merk;
+    public String model;
+    public String kenteken;
+    public String kleur;
+
+    public  VoertuigDto(){
+    }
 
     public VoertuigDto(Long id, String merk, String model, String kenteken, String kleur) {
         this.id = id;

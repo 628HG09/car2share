@@ -16,6 +16,17 @@ public class PassagierProfielDto {
 // deze geprobeerd:
     public VoertuigDto voertuigDto;
 
+    //deze constructor geprobeerd:
+    public PassagierProfielDto() {
+    }
+
+    public PassagierProfielDto(Long id, String firstname, String lastname, LocalDate dob) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.dob = dob;
+    }
+
     public Long getId() {
         return id;
     }
@@ -46,5 +57,12 @@ public class PassagierProfielDto {
 
     public void setDob(LocalDate dob) {
         this.dob = dob;
+    }
+
+    public VoertuigDto getVoertuigDto() {
+        return voertuigDto;
+    }
+    public void setVoertuigDto(VoertuigDto voertuigDto) {
+        this.voertuigDto = voertuigDto;
     }
 }

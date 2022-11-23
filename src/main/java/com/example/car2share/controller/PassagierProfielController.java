@@ -17,8 +17,6 @@ import java.util.Optional;
 
 @RestController
 public class PassagierProfielController {
-//  @Autowired
-//    PassagierProfielRepository repos;
 
     private final PassagierProfielService service;
 
@@ -117,6 +115,7 @@ public class PassagierProfielController {
 
 //   volgende GET is direct connected met repsoitory methode!
 //   @GetMapping("/passagierprofielen/oud")
+
 //    public ResponseEntity<Object> getOldFarts(){
 //       return new ResponseEntity<>(repos.findByDobBefore(LocalDate.of(1980,1, 1)), HttpStatus.OK);
 //   }

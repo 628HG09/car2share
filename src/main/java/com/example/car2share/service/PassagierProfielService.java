@@ -5,6 +5,7 @@ import com.example.car2share.dto.PasssagierProfielInputDto;
 import com.example.car2share.exception.RecordNotFoundException;
 import com.example.car2share.model.PassagierProfiel;
 import com.example.car2share.repository.PassagierProfielRepository;
+import com.example.car2share.repository.RitverzoekRepository;
 import com.example.car2share.repository.VoertuigRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,14 +19,38 @@ public class PassagierProfielService {
 //dependecy injection nieuwe manier:
 //    bij de testcode gaan we autowired gebruikenn
     private final PassagierProfielRepository passagierProfielRepository;
+
     private final VoertuigRepository voertuigRepository;
+
     private final VoertuigService voertuigService;
 
-    public PassagierProfielService(PassagierProfielRepository passagierProfielRepository, VoertuigRepository voertuigRepository, VoertuigService voertuigService) {
+    private final RitverzoekRepository ritverzoekRepository;
+
+    private final RitverzoekService ritverzoekService;
+
+    public PassagierProfielService(PassagierProfielRepository passagierProfielRepository, VoertuigRepository voertuigRepository, VoertuigService voertuigService, RitverzoekRepository ritverzoekRepository, RitverzoekService ritverzoekService) {
         this.passagierProfielRepository = passagierProfielRepository;
         this.voertuigRepository = voertuigRepository;
         this.voertuigService = voertuigService;
+        this.ritverzoekRepository = ritverzoekRepository;
+        this.ritverzoekService = ritverzoekService;
     }
+    // hier zit het probleem. Heeft te maken met de relatie en G&S in PassagierProfiel
+//    public List<PassagierProfielDto> transferPassagierProfielListToDtoList(List<PassagierProfiel> passagierprofielen){
+//        List<PassagierProfielDto> ppDtoList = new ArrayList<>();
+//
+//        for(PassagierProfiel pp : passagierprofielen) {
+//            PassagierProfielDto dto = transferToDto(pp);
+//            if(pp.getRitverzoeken() != null){
+//                dto.setRitverzoekDto(ritverzoekService.transferToDto(pp.getRitverzoeken()));
+//            }
+//            if(pp.getVoertuig() != null){
+//                dto.setVoertuigDto(voertuigService.transferToDto(pp.getVoertuig()));
+//            }
+//            ppDtoList.add(dto);
+//        }
+//        return ppDtoList;
+//    }
 
     public Long createPassengerProfile(PassagierProfielDto passagierProfielDto) {
         PassagierProfiel passagierProfiel = new PassagierProfiel();

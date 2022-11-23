@@ -10,10 +10,10 @@ public class Voertuig {
     @GeneratedValue
     Long id;
 
-    private String merk;
-    private String model;
-    private String kenteken;
-    private String kleur;
+    public String merk;
+    public String model;
+    public String kenteken;
+    public String kleur;
 
     @OneToOne(mappedBy = "voertuig")
     PassagierProfiel passagierProfiel;
